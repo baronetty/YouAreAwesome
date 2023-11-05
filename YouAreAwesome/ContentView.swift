@@ -12,38 +12,42 @@ struct ContentView: View {
     @State private var messageBool = true
     
     var body: some View {
-        
-        VStack {
             
-            Text(messageString)
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .minimumScaleFactor(0.5)
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.red)
-                .italic()
-                .frame(height: 150)
-                .frame(maxWidth: .infinity)
-                .border(.orange, width: 1)
-                .padding()
-            
-            
-            
-            HStack {
-                Button("Awesome"){
-                    messageString = "You Are Awesome!"
-                }
-                .buttonStyle(.borderedProminent)
+            VStack {
                 
+                Spacer()
                 
-                Button("Great") {
-                    messageString = "You Are Great!"
+                Text(messageString)
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                    .minimumScaleFactor(0.5)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.red)
+                    .italic()
+                    .frame(height: 150)
+                    .frame(maxWidth: .infinity)
+                   // .border(.orange, width: 1)
+                    .padding()
+                
+                Spacer()
+                
+                HStack {
+                    Button("Awesome"){
+                        messageString = "You Are Awesome!"
+                    }
+                    .buttonStyle(.borderedProminent)
                     
+                    Spacer()
+                    
+                    Button("Great") {
+                        messageString = "You Are Great!"
+                        
+                    }
+                    .buttonStyle(.borderedProminent)
                 }
-                .buttonStyle(.borderedProminent)
+               // .border(.purple, width: 5)
+                .padding()
             }
-            .border(.purple, width: 5)
-        }
     }
 }
 
