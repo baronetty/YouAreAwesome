@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var messageString = "Namaste"
+  
+    @State private var messageString = ""
     @State private var messageBool = true
     
     var body: some View {
@@ -17,19 +18,6 @@ struct ContentView: View {
             
             Spacer()
             
-            Image(systemName: "cloud.sun.rain.fill")
-                .resizable()
-                .scaledToFit()
-                .symbolRenderingMode(.multicolor)
-                .padding()
-                .background(Color(hue: 0.51, saturation: 0.229, brightness: 0.88))
-                .cornerRadius(30)
-                .shadow(radius: 30, x: 20, y: 20)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 30)
-                        .stroke(.teal, lineWidth: 1)
-                )
-                .padding()
             
             Text(messageString)
                 .font(.largeTitle)
@@ -44,20 +32,18 @@ struct ContentView: View {
             
             Spacer()
             
-            HStack {
-                Button("Awesome"){
-                    messageString = "You Are Awesome!"
-                }
-                .buttonStyle(.borderedProminent)
+            Button("Show Message"){
                 
-                Spacer()
+                let message1 = "You Are Awesome!"
+                let message2 = "You Are Great!"
                 
-                Button("Great") {
-                    messageString = "You Are Great!"
-                    
+                if messageString == message1 {
+                    messageString = message2
+                } else {
+                    messageString = message1
                 }
-                .buttonStyle(.borderedProminent)
             }
+            .buttonStyle(.borderedProminent)
             .padding()
         }
     }
