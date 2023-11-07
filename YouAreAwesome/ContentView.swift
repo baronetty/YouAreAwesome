@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-  
+    
     @State private var messageString = ""
     @State private var messageBool = true
     
@@ -37,11 +37,7 @@ struct ContentView: View {
                 let message1 = "You Are Awesome!"
                 let message2 = "You Are Great!"
                 
-                if messageString == message1 {
-                    messageString = message2
-                } else {
-                    messageString = message1
-                }
+                messageString == message1 ? (messageString = message2) : (messageString = message1)
             }
             .buttonStyle(.borderedProminent)
             .padding()
