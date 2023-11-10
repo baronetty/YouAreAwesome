@@ -51,20 +51,14 @@ struct ContentView: View {
                                 "You Make Me Smile",
                                 "If the genius bar needs help, they call You!"]
                 
-                messageString = messages[messageNumber]
-                messageNumber += 1
-                if messageNumber == messages.count {
-                    messageNumber = 0
-                }
+                messageString = messages[Int.random(in: 0...messages.count-1)]
+                
                 
                 
                 
                 //TODO: - update the imageName variable -
-                imageName = "image\(imageNumber)"
-                imageNumber += 1
-                if imageNumber > 9 {
-                    imageNumber = 0
-                }
+                imageName = "image\(Int.random(in: 0...9))"
+                
                 
             }
             .buttonStyle(.borderedProminent)
